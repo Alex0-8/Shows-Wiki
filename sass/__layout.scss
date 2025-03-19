@@ -214,6 +214,7 @@ header {
             overflow-y: auto;
             @include flex-center;
             align-items: flex-start;
+            justify-content: unset;
             flex-direction: column;
             gap: 10px;
 
