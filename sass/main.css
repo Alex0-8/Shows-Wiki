@@ -232,6 +232,7 @@ header div #logo-show-secundario {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   gap: 10px;
 }
