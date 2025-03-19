@@ -32,6 +32,21 @@ $card-height: 100%;
     header {
         background-color: #222 !important;
     }
+
+    .show-card {
+        background-color: #8a8989;
+    }
+
+    .search-container{
+        button {
+            background-color: #57cdd2 !important;
+        }
+    }
+
+    h4 {
+        background-color: #1a1a1a;
+        box-shadow: none !important;
+    }
 }
 
 @mixin breakepoint-index-1 {
