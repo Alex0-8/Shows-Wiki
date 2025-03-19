@@ -1,0 +1,51 @@
+$border-radius: 8px;
+$card-size: 100%;
+$card-height: 100%;
+
+@mixin grid-layout($columns: repeat(auto-fit, minmax(285px, 1fr))) {
+    display: grid;
+    grid-template-columns: $columns;
+}
+
+@mixin responsive-text($font-size, $font-weight: normal) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin flex-center($justify: center, $align: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin transition($duration: 0.6s, $property: all, $easing: ease) {
+    transition: $property $duration $easing;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0d0d0d;
+        color: #fff;
+    }
+
+    header {
+        background-color: #222 !important;
+    }
+}
+
+@mixin breakepoint-index-1 {
+    @media screen and (max-width: 1135px) { @content};
+}
+
+@mixin breakepoint-index-2 {
+    @media screen and (max-width: 850px) { @content};
+}
+
+@mixin breakepoint-index-3 {
+    @media screen and (max-width: 550px) { @content};
+}
+
+@mixin breakepoint-details {
+    @media screen and (max-width: 700px) { @content};
+}

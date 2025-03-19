@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #87ceeb;
+}
+
+.loading-gif {
+    width: 400px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 15px;
+    background-color: #ff2323;
+    margin-bottom: 20px;
+    @include flex-center;
+    justify-content: space-between;
+
+    div {
+        @include flex-center();
+        gap: 15px;
+    
+        .logo-show {
+            width: 40px;
+        }
+    
+        #logo-show-secundario {
+            width: 100px;
+        }
+    }
+}
+
+.show-grid {
+    margin: 30px auto;
+    width: 85%;
+    @include grid-layout();
+    gap: 55px;
+
+    .show-card {
+        text-align: center;
+        @include flex-center();
+        background-color: #8a8989;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 3px #ada2e2;
+        @include transition();
+
+        @media (hover: hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    
+
+        .show-image-container {
+            width: 70%;
+            padding: 7px;
+            max-width: 270px;
+
+            .show-image {
+                width: 100%;
+                cursor: pointer;
+                object-fit: cover;
+            }
+        }
+
+        > .show-info {
+            width: $card-size;
+            height: $card-height;
+            max-width: 270px;
+            padding: 7px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            @include transition();
+        }
+
+        .show-name {
+            @include responsive-text(20px, 800);
+        }
+
+        .show-genres {
+            max-width: 270px;
+            @include flex-center();
+            flex-wrap: wrap;
+            color: #57cdd2;
+            gap: 7px;
+        }
+
+        .show-genre {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 6px;
+            @include responsive-text(19px, 500);
+        }
+    }
+
+    @include breakepoint-index-1 {
+        justify-items: center;
+
+        .show-card {
+            width: 360px !important;
+        }
+    }
+
+    @include breakepoint-index-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include breakepoint-index-3 {
+
+
+        .show-card {
+            width: 80% !important;
+        }
+    }
+}
+
+//--------pagina de detalles-------\\
+.show-details {
+    @include flex-center;
+    gap: 20px;
+
+    .show-img {
+        width: 290px;
+        @include flex-center;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+            max-width: 290px;
+            font-size: 28px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .show-info {
+        width: 35%;
+        @include flex-center;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    @include breakepoint-details {
+        flex-direction: column;
+
+        .show-img {
+            width: 250px;
+        }
+
+        .show-info {
+            width: 80%;
+        }
+    }
+}
+
+#episodes-seccion {
+    margin: 25px auto;
+    @include flex-center;
+    flex-direction: column;
+
+    h3 {
+        width: 20%;
+        margin-bottom: 15px;
+    }
+}
+
+.episodes-container {
+    margin: 0 auto;
+    width: 90%;
+    @include grid-layout;
+    gap: 25px;
+    justify-items: center;
+
+    .season{
+        margin: 0 auto;
+        width: 12.8125rem;
+
+        h4 {
+            cursor: pointer;
+            text-align: center;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 6px;
+            @include responsive-text(19px, 500);
+            transition: height .3s ease;
+        }
+
+        .episodes {
+            height: 0;
+            overflow: hidden;
+            transition: height .3s ease;
+        }
+
+        .episodes-show {
+            height: 210px;
+            overflow-y: auto;
+            @include flex-center;
+            flex-direction: column;
+            gap: 10px;
+
+            &::-webkit-scrollbar {
+                width: 7px;
+                background-color: black;
+                border-radius: 5px;
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background: #2fe1f8;
+                border-radius: 5px;
+            }
+        }
+    }
+}

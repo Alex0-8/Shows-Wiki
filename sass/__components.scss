@@ -1,0 +1,47 @@
+.search-container {
+    @include flex-center();
+    // border: 2px solid #57cdd2;
+    border-radius: 10px;
+    @include breakepoint-index-3 {
+        justify-content: flex-end;
+
+        input {
+            width: 30%;
+        }
+    }
+
+    input[type='text'] {
+        font-size: 20px;
+        border-radius: 8px 0 0 8px;
+        outline: none;
+        border: 2px solid #0075f300;
+        transition: all .2s linear;
+    
+        &:focus {
+            border: 2px solid #c92ff8;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        font-size: 1.0625rem;
+        font-weight: 300;
+        background-color: #57cdd2;
+        width: 50px;
+        height: 30px;
+        border-radius: 0 8px 8px 0;
+        border: none;
+        @include transition();
+
+        &:active {
+            background-color: rgb(24, 255, 24);
+            color: #000;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+            background-color: #26b0d3;
+            }
+        }
+    }
+}
