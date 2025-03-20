@@ -150,7 +150,7 @@ const loadShowInfo = async () => {
             <img src="${show.image ? show.image.original : 'https://via.placeholder.com/300x450'}" alt="${show.name}">
             </section>
             <section class="show-info">
-            <p><strong>Géneros:</strong> ${show.genres.join(', ')}</p>
+            <p><strong>Genres:</strong> ${show.genres.join(', ')}</p>
             <p><strong>Reales date:</strong> ${show.premiered || 'Desconocida'}</p>
             <p><strong>Score:</strong> ${show.rating.average || 'No disponible'}</p>
             <p><strong>Resume:</strong> ${show.summary}</p>
